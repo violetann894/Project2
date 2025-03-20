@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Function {
 
     /**
-     * The logFunction method calculates the value of ln(x) and save the x and y values into ArrayLists for saving.
+     * The logFunction method calculates the value of ln(x) and saves the x and y values into ArrayLists.
      * @param startingValue The starting x value (inclusive)
      * @param finishingValue The last x value (inclusive)
      */
