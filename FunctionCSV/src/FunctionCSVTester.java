@@ -11,6 +11,6 @@ public class FunctionCSVTester {
         Function function = new Function();
 
         //Call the logFunction to calculate and save log values
-        function.logFunction(1, 1000000);
+        function.logFunction(1, 1000);
     }
 }
