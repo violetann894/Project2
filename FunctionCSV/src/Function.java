@@ -24,8 +24,9 @@ public class Function {
             yValues.add(Math.log(i));
         }
 
-        //Call the saveFunction method to save the x and y values in a csv file
+        //Call the saveFunction and saveSaltedFunction method to save the x and y values in a csv file
         saveFunction(xValues, yValues);
+        saveSaltedFunction(xValues, yValues);
     }
 
     /**
@@ -41,5 +42,26 @@ public class Function {
 
         //Call the createFile method to save the values in a csv file
         exporter.createFile(xValues, yValues);
+    }
+
+    /**
+     * The saveSaltedFunction method creates an Exporter object, salts the y values, and saves the x and y values
+     * from the function that was calculated.
+     * @param xValues The ArrayList of x values from the function
+     * @param yValues The ArrayList of y values calculated using the function and the x values
+     */
+    public void saveSaltedFunction(ArrayList<Integer> xValues, ArrayList<Double> yValues){
+
+        //Create the exporter object
+        Exporter exporter = new Exporter();
+
+        //Create the salter object
+        Salter salter = new Salter();
+
+        //Salt the yValues data
+        ArrayList<Double> saltedYValues = salter.addSalt(yValues);
+
+        //Call the createFile method to save the values in a csv file
+        exporter.createSaltedFile(xValues, saltedYValues);
     }
 }
