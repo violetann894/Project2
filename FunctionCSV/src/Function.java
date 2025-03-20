@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 
 /**
- * The Function class calculates the answer to a mathematical function using x and y values.
+ * The Function class holds a method that calculates the answer to a mathematical function using x and y values and a
+ * method that saves the x and y values.
  * @author Rachel Hussmann
  */
 public class Function {
