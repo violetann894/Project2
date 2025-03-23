@@ -13,8 +13,9 @@ public class Importer {
     /**
      * The importFile method imports a file and puts all the lines from the file into an ArrayList of strings
      * @param filepath The filepath of the file that needs to be imported
+     * @return The y values from the processed file
      */
-    public ArrayList<ArrayList> importFile(String filepath){
+    public ArrayList<Double> importFile(String filepath){
 
         ArrayList<String> dataFromFile = new ArrayList<>();
 
@@ -59,33 +60,25 @@ public class Importer {
      * The trimAndProcess method trims the extra information off of the imported file and separates the values into
      * x and y values.
      * @param data The ArrayList of strings to be processed
-     * @return An ArrayList of ArrayLists that hold the x and y values
+     * @return An ArrayList of doubles that hold the y values
      */
-    public ArrayList<ArrayList> trimAndProcess(ArrayList<String> data){
+    public ArrayList<Double> trimAndProcess(ArrayList<String> data){
 
         //Remove the first string because that is just the declaration of the X,Y values
         data.remove(0);
 
-        //Create the arraylists that will hold the processed x and y values
-        ArrayList<Integer> xValues = new ArrayList<>();
+        //Create the arraylist that will hold the processed y values
         ArrayList<Double> yValues = new ArrayList<>();
 
         /*Iterate through the list of strings to split the values at the comma, the first value being the x value
-        and the second value being the y value. Add the x value to the xValues list and add the y value to the
-        yValues list*/
+        and the second value being the y value. Add the y value to the yValues list*/
         for(String line : data){
             String[] xyValues = line.split(",");
-            xValues.add(Integer.valueOf(xyValues[0]));
             yValues.add(Double.valueOf(xyValues[1]));
         }
 
-        //Create an ArrayList to hold the ArrayLists that have the x and y values
-        ArrayList<ArrayList> xyValues = new ArrayList<>();
-        xyValues.add(xValues);
-        xyValues.add(yValues);
-
-        //Return the ArrayList of ArrayLists
-        return xyValues;
+        //Return the ArrayList of yValues
+        return yValues;
     }
 
 }
