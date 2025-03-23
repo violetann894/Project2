@@ -157,6 +157,8 @@ public class PoissonDistribution {
         System.out.println("Standard deviation of distribution using BigDecimal: " +
                 standardDeviation(BigDecimal.valueOf(2.0)));
 
+        System.out.println();
+
         //Example Poisson distribution where lambada has not been calculated
         //Homework problem 3.128
         System.out.println("Poisson Distribution using k = 80, n = 60 and y = 0: " +
@@ -167,6 +169,8 @@ public class PoissonDistribution {
 
         System.out.println("Poisson Distribution using k = 80, n = 60, y = 0 and BigInteger: " +
                 poissonDistribution(n, k, BigInteger.ONE, BigInteger.ZERO));
+
+        System.out.println();
     }
 
 }
