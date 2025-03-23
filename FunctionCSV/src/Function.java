@@ -11,8 +11,10 @@ public class Function {
      * The logFunction method calculates the value of ln(x) and saves the x and y values into ArrayLists.
      * @param startingValue The starting x value (inclusive)
      * @param finishingValue The last x value (inclusive)
+     * @param origin The origin of the random function (inclusive)
+     * @param bound The upper bound of the random function (exclusive)
      */
-    public void logFunction(int startingValue, int finishingValue){
+    public void logFunction(int startingValue, int finishingValue, int origin, int bound){
 
         //Create the ArrayLists that will hold the x and y values
         ArrayList<Integer> xValues = new ArrayList<>();
@@ -26,7 +28,7 @@ public class Function {
 
         //Call the saveFunction and saveSaltedFunction method to save the x and y values in a csv file
         saveFunction(xValues, yValues);
-        saveSaltedFunction(xValues, yValues);
+        saveSaltedFunction(xValues, yValues, origin, bound);
     }
 
     /**
@@ -49,8 +51,10 @@ public class Function {
      * from the function that was calculated.
      * @param xValues The ArrayList of x values from the function
      * @param yValues The ArrayList of y values calculated using the function and the x values
+     * @param origin The origin of the random function (inclusive)
+     * @param bound The upper bound of the random function (exclusive)
      */
-    public void saveSaltedFunction(ArrayList<Integer> xValues, ArrayList<Double> yValues){
+    public void saveSaltedFunction(ArrayList<Integer> xValues, ArrayList<Double> yValues, int origin, int bound){
 
         //Create the exporter object
         Exporter exporter = new Exporter();
@@ -59,7 +63,7 @@ public class Function {
         Salter salter = new Salter();
 
         //Salt the yValues data
-        ArrayList<Double> saltedYValues = salter.addSalt(yValues);
+        ArrayList<Double> saltedYValues = salter.addSalt(yValues, origin, bound);
 
         //Call the createFile method to save the values in a csv file
         exporter.createSaltedFile(xValues, saltedYValues);
