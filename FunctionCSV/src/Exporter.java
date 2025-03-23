@@ -20,7 +20,7 @@ public class Exporter {
         try {
 
             //Create a PrintWriter object to handle copying the data into a file
-            PrintWriter out = new PrintWriter("Function.csv");
+            PrintWriter out = new PrintWriter("LogFunction.csv");
 
             //Create the header for the csv file so it knows how to categorize the data
             out.println("X,Y,");
@@ -55,7 +55,7 @@ public class Exporter {
         try {
 
             //Create a PrintWriter object to handle copying the data into a file
-            PrintWriter out = new PrintWriter("SaltedFunction.csv");
+            PrintWriter out = new PrintWriter("SaltedLogFunction.csv");
 
             //Create the header for the csv file so it knows how to categorize the data
             out.println("X,Y,");
