@@ -9,10 +9,10 @@ import java.util.ArrayList;
 public class Exporter {
 
     /**
-     * The createFile method creates a csv file called "Function.csv" that holds the X and Y values of a mathematical
-     * function.
+     * The createFile method creates a csv file that holds the X and Y values of a mathematical function.
      * @param xValues The ArrayList of x values that were used to with the function to calculate the y values
      * @param yValues The ArrayList of y values that were calculated using the function
+     * @param nameOfFile The name of the file to be created
      */
     public void createFile(ArrayList<Integer> xValues, ArrayList<Double> yValues, String nameOfFile){
 
