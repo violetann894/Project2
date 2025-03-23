@@ -55,7 +55,7 @@ public class TchebysheffsTheorem {
 
         //Make sure they are the same
         if(inBetweenLower == inBetweenUpper){
-            k = (double) inBetweenLower /SD;
+            k = inBetweenLower /SD;
         }
 
         //Check if k is greater than 1
