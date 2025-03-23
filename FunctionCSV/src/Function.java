@@ -43,7 +43,7 @@ public class Function {
         Exporter exporter = new Exporter();
 
         //Call the createFile method to save the values in a csv file
-        exporter.createFile(xValues, yValues);
+        exporter.createFile(xValues, yValues, "LogFunction.csv");
     }
 
     /**
@@ -66,6 +66,6 @@ public class Function {
         ArrayList<Double> saltedYValues = salter.addSalt(yValues, origin, bound);
 
         //Call the createFile method to save the values in a csv file
-        exporter.createSaltedFile(xValues, saltedYValues);
+        exporter.createFile(xValues, saltedYValues, "SaltedLogFunction.csv");
     }
 }
