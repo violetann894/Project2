@@ -60,7 +60,7 @@ public class Importer {
      * The trimAndProcess method trims the extra information off of the imported file and separates the values into
      * x and y values.
      * @param data The ArrayList of strings to be processed
-     * @return An ArrayList of doubles that hold the y values
+     * @return An ArrayList of doubles that holds the y values
      */
     public ArrayList<Double> trimAndProcess(ArrayList<String> data){
 
