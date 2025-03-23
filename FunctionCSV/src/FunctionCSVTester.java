@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 /**
- * The FunctionCSVTester is the tester class for the Exporter and Function classes. It contains the main method to
- * run the methods called.
+ * The FunctionCSVTester is the tester class for the Exporter, Function, Importer, Salter, and Smoother classes.
+ * It contains the main method to run the methods called.
  * @author Rachel Hussmann
  */
 public class FunctionCSVTester {
