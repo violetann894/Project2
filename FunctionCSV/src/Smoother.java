@@ -13,16 +13,42 @@ public class Smoother {
      */
     public void smoothData(ArrayList<Double> data, int windowValue){
 
+        //Create the ArrayLists to save the x and y values
         ArrayList<Integer> xValues = new ArrayList<>();
         ArrayList<Double> yValues = new ArrayList<>();
 
+        //Create the variables that will be needed for the averaging process
         int xCount = 1;
+        int averageCount = 1;
+        double sum = 0.0;
 
-        for(int i = windowValue-1; i < data.size(); i+=windowValue*2){
+        //Loop through the data
+        for(double y : data){
 
+            //Check if the averageCount variable is less than the windowValue times 2
+            if(averageCount < windowValue*2){
 
+                //If it is, then add the value of y to the sum and add one to the averageCount
+                sum += y;
+                averageCount++;
+            }else{
+
+                //Else, if the averageCount is greater than the windowValue times 2
+
+                //Add the average of the sum and the averageCount variable to the yValues arraylist
+                yValues.add(sum/averageCount);
+
+                //Add the xCount to the xValues arraylist
+                xValues.add(xCount);
+
+                //Reset all the variables used for the averaging process
+                averageCount = 1;
+                xCount++;
+                sum = 0.0;
+            }
         }
 
+        //Send the new smoothed data to the saveSmoothedFunction method
         saveSmoothedFunction(xValues, yValues);
     }
 
