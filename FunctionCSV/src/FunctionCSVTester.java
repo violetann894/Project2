@@ -13,7 +13,7 @@ public class FunctionCSVTester {
         Function function = new Function();
 
         //Call the logFunction method to calculate and save log values
-        function.logFunction(1, 1000, -500, 501);
+        function.logFunction(1, 10000, -500, 501);
 
         //Create the importer object
         Importer importer = new Importer();
@@ -23,9 +23,9 @@ public class FunctionCSVTester {
                 importer.importFile("C:\\Users\\Rache\\IdeaProjects\\Project2\\SaltedLogFunction.csv");
 
         //Create the smoother object
-        Smoother smoother = new Smoother();
+        Smoother smoother = new Smoother(importedData);
 
         //Call the smoothData method to save the smoothed data
-        smoother.smoothData(importedData, 5);
+        smoother.runSmoother(10,4);
     }
 }

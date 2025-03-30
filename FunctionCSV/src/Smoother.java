@@ -6,16 +6,27 @@ import java.util.ArrayList;
  */
 public class Smoother {
 
+    private ArrayList<Integer> xValues;
+    private ArrayList<Double> yValues;
+
+    /**
+     *
+     * @param yValues
+     */
+    public Smoother(ArrayList<Double> yValues){
+        this.xValues = new ArrayList<>();
+        this.yValues = yValues;
+    }
+
     /**
      * The smoothData method takes in salted values and finds the average of a set number of values to smooth the data.
-     * @param data The data that needs to be smoothed
      * @param windowValue The number of data points to be averaged to smooth the data
      */
-    public void smoothData(ArrayList<Double> data, int windowValue){
+    public void smoothData(int windowValue){
 
         //Create the ArrayLists to save the x and y values
-        ArrayList<Integer> xValues = new ArrayList<>();
-        ArrayList<Double> yValues = new ArrayList<>();
+        ArrayList<Integer> tempXValues = new ArrayList<>();
+        ArrayList<Double> tempYValues = new ArrayList<>();
 
         //Create the variables that will be needed for the averaging process
         int xCount = 1;
@@ -23,7 +34,7 @@ public class Smoother {
         double sum = 0.0;
 
         //Loop through the data
-        for(double y : data){
+        for(double y : yValues){
 
             //Check if the averageCount variable is less than the windowValue times 2
             if(averageCount < windowValue*2){
@@ -36,10 +47,10 @@ public class Smoother {
                 //Else, if the averageCount is greater than the windowValue times 2
 
                 //Add the average of the sum and the averageCount variable to the yValues arraylist
-                yValues.add(sum/averageCount);
+                tempYValues.add(sum/averageCount);
 
                 //Add the xCount to the xValues arraylist
-                xValues.add(xCount);
+                tempXValues.add(xCount);
 
                 //Reset all the variables used for the averaging process
                 averageCount = 1;
@@ -48,20 +59,33 @@ public class Smoother {
             }
         }
 
-        //Send the new smoothed data to the saveSmoothedFunction method
-        saveSmoothedFunction(xValues, yValues);
+        xValues.clear();
+        xValues.addAll(tempXValues);
+        yValues.clear();
+        yValues.addAll(tempYValues);
     }
 
     /**
      * The saveSmoothedFunction method saves the x values and the smoothed y values into a .CSV file
-     * @param xValues The x values of the function
-     * @param yValues The smoothed y values of the function
      */
-    public void saveSmoothedFunction(ArrayList<Integer> xValues, ArrayList<Double> yValues){
+    public void saveSmoothedFunction(){
         //Create the exporter object
         Exporter exporter = new Exporter();
 
         //Call the createFile method to save the values in a csv file
         exporter.createFile(xValues, yValues, "SmoothedLogFunction.csv");
+    }
+
+    /**
+     *
+     * @param windowValue
+     * @param numberOfRuns
+     */
+    public void runSmoother(int windowValue, int numberOfRuns){
+        for(int i = 0; i < numberOfRuns; i++){
+            smoothData(windowValue);
+        }
+
+        saveSmoothedFunction();
     }
 }
