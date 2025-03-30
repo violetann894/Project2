@@ -13,7 +13,7 @@ public class FunctionCSVTester {
         Function function = new Function();
 
         //Call the logFunction method to calculate and save log values
-        function.logFunction(1, 10000, -500, 501);
+        function.logFunction(1, 10000, -100, 101);
 
         //Create the importer object
         Importer importer = new Importer();
@@ -26,6 +26,6 @@ public class FunctionCSVTester {
         Smoother smoother = new Smoother(importedData);
 
         //Call the smoothData method to save the smoothed data
-        smoother.runSmoother(10,4);
+        smoother.runSmoother(100,3);
     }
 }
