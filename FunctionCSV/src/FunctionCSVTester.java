@@ -26,6 +26,6 @@ public class FunctionCSVTester {
         Smoother smoother = new Smoother(importedData);
 
         //Call the smoothData method to save the smoothed data
-        smoother.runSmoother(200,3);
+        smoother.runSmoother(250,3);
     }
 }
