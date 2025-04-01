@@ -9,7 +9,7 @@ classdef Smoother
   # class has one method.
   methods (Access = public)
 
-    # The smoothData method accepts the salted y values and averages them with
+    # The smoothData method accepst the salted y values and averages them with
     # a window of values around it to smooth the line and make the data more
     # understandable.
     #

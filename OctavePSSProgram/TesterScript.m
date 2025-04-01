@@ -1,5 +1,5 @@
 # Create the natural log data points
-ln = LogFunction(1, 100);
+ln = LogFunction(1, 10000);
 
 # Get the x and y values of the natural log
 x = ln.get_x();
@@ -26,10 +26,10 @@ saltedValues = [x;m];
 # Octave has a built in method to put values into .csv files, so I am using it
 # to mimic my code from my Java PSS project, as well as to practice using the
 # language.
-csvwrite("C:/Users/Rache/OctaveFiles/Project2/saltedValues.csv", saltedValues);
+csvwrite("C:/Users/Rache/IdeaProjects/Project2/OctavePSSProgram/saltedValues.csv", saltedValues);
 
 # Read the csv values and place them into a matrix
-saltedValueMatrix = csvread("C:/Users/Rache/OctaveFiles/Project2/saltedValues.csv");
+saltedValueMatrix = csvread("C:/Users/Rache/IdeaProjects/Project2/OctavePSSProgram/saltedValues.csv");
 
 # Get each row of the matrix and set them to their respective vectors
 # Using the colon in the index allows the program to take the column values of
@@ -39,7 +39,7 @@ saltedYValues = saltedValueMatrix(2, :);
 
 # Create a new Smoother object and smooth the y values
 smooth = Smoother();
-smoothedYValues = smooth.smoothData(saltedYValues, 5, 4);
+smoothedYValues = smooth.smoothData(saltedYValues, 40, 3);
 
 # Create a new graph and plot the smoothed natural log function
 figure;
@@ -50,4 +50,4 @@ title("Smoothed plot of Natural Log Function");
 smoothedValues = [saltedXValues; smoothedYValues];
 
 # Write the smoothed values to a .csv file
-csvwrite("C:/Users/Rache/OctaveFiles/Project2/smoothedValues.csv", smoothedValues);
+csvwrite("C:/Users/Rache/IdeaProjects/Project2/OctavePSSProgram/smoothedValues.csv", smoothedValues);
