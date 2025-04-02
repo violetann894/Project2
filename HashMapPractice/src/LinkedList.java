@@ -114,7 +114,7 @@ public class LinkedList<E> implements Iterable<E> {
 
     /**
      * The remove method deletes the item at the specified index
-     * @param index The index
+     * @param index The index to of the Node to be deleted
      */
     public void remove(int index) {
 
