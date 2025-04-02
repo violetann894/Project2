@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FunctionCSV/FunctionCSV.iml" filepath="$PROJECT_DIR$/FunctionCSV/FunctionCSV.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HashMapPractice/HashMapPractice.iml" filepath="$PROJECT_DIR$/HashMapPractice/HashMapPractice.iml" />
       <module fileurl="file://$PROJECT_DIR$/Project2.iml" filepath="$PROJECT_DIR$/Project2.iml" />
       <module fileurl="file://$PROJECT_DIR$/StatsLibrary/StatsLibrary.iml" filepath="$PROJECT_DIR$/StatsLibrary/StatsLibrary.iml" />
     </modules>

@@ -39,7 +39,7 @@ saltedYValues = saltedValueMatrix(2, :);
 
 # Create a new Smoother object and smooth the y values
 smooth = Smoother();
-smoothedYValues = smooth.smoothData(saltedYValues, 40, 3);
+smoothedYValues = smooth.smoothData(saltedYValues, 10, 8);
 
 # Create a new graph and plot the smoothed natural log function
 figure;
