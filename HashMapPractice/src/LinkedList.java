@@ -12,7 +12,7 @@ public class LinkedList<E> implements Iterable<E> {
 
     /**
      * The add method accepts a new item and adds it to the linked list.
-     * @param item The object to be added to the list
+     * @param item The generic object to be added to the list
      */
     public void add(E item) {
 
@@ -47,7 +47,7 @@ public class LinkedList<E> implements Iterable<E> {
     /**
      * The add method inserts a new node at the given index.
      * @param item The object to be added to the linked list
-     * @param index The index to add the new item at
+     * @param index The index to add the new Node at
      */
     public void add(E item, int index) {
 
@@ -113,7 +113,7 @@ public class LinkedList<E> implements Iterable<E> {
     }
 
     /**
-     * The remove method deletes the item at the specified index
+     * The remove method deletes the Node at the specified index
      * @param index The index of the node to be deleted
      */
     public void remove(int index) {
@@ -185,8 +185,8 @@ public class LinkedList<E> implements Iterable<E> {
 
     /**
      * The get method returns the item that is in the specified index of the list.
-     * @param index The index of the object the user wants returned
-     * @return The object at the specified index
+     * @param index The index of the generic object the user wants returned
+     * @return The generic object at the specified index
      */
     public E get(int index) {
 
@@ -222,9 +222,9 @@ public class LinkedList<E> implements Iterable<E> {
 
     /**
      * The set method changes the object at the specified index.
-     * @param index The index of the object to be changed
+     * @param index The index of the Node to be changed
      * @param item The new item to be set at the specified index
-     * @return The new object that has been set to the specified index
+     * @return The data that has been replaced
      */
     public E set(int index, E item) {
 
@@ -264,7 +264,7 @@ public class LinkedList<E> implements Iterable<E> {
 
     /**
      * The size method returns the current number of nodes in the linked list
-     * @return The current number of nodes in the list
+     * @return The current number of nodes in the linked list
      */
     public int size() {
         return size;
@@ -272,9 +272,9 @@ public class LinkedList<E> implements Iterable<E> {
 
     /**
      * The iterator method is a method that comes from the Iterable interface, that must be implemented when used.
-     * This implementation of the iterator is to create a way for the class to use foreach loops and other iteration
-     * based methods.
-     * @return The iterator object for the LinkedList class
+     * This implementation of the iterator is used to create a way for the class to use foreach loops and other
+     * iteration based methods.
+     * @return The Iterator object for the LinkedList class
      */
     @Override
     public Iterator<E> iterator() {
