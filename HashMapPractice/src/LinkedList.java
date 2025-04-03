@@ -3,7 +3,7 @@ import java.util.Iterator;
 /**
  * The LinkedList class is responsible for creating and managing a linked list of items. This class can handle generic
  * types and has a nested class called the Node class, which manages each part of the linked list separately.
- * @param <E> A generic object, can accept any class
+ * @param <E> A generic object of any class
  * @author Rachel Hussmann
  */
 public class LinkedList<E> implements Iterable<E> {
@@ -16,19 +16,19 @@ public class LinkedList<E> implements Iterable<E> {
      */
     public void add(E item) {
 
-        //Create the new generic node
+        //Create the new generic Node
         Node<E> newNode = new Node<>(item);
 
-        //Check to see if the head node is null
+        //Check to see if the head Node is null
         if (head == null) {
 
-            //If it is, then the newNode is now the head node
+            //If it is, then the newNode is now the head Node
             head = newNode;
         } else {
 
-            //If the head node is not null
+            //If the head Node is not null
 
-            //Then create a temp node that will hold the information from the head node
+            //Then create a temp Node that will hold the information from the head Node
             Node<E> temp = head;
 
             //Iterate through the linked list until we reach the end
@@ -36,7 +36,7 @@ public class LinkedList<E> implements Iterable<E> {
                 temp = temp.next;
             }
 
-            //Once we reach the end of the list, add the previous node's next pointer to the newNode
+            //Once we reach the end of the list, add the previous Node's next pointer to the newNode
             temp.next = newNode;
         }
 
@@ -45,13 +45,13 @@ public class LinkedList<E> implements Iterable<E> {
     }
 
     /**
-     * The add method inserts a new node at the given index.
+     * The add method inserts a new Node at the given index.
      * @param item The object to be added to the linked list
      * @param index The index to add the new Node at
      */
     public void add(E item, int index) {
 
-        //Create the new generic node
+        //Create the new generic Node
         Node<E> node = new Node(item);
 
         //Create the Node objects we will need to save objects as we change things
@@ -63,7 +63,7 @@ public class LinkedList<E> implements Iterable<E> {
 
             //If the linked list is empty
 
-            //Set the new node as the head node and increment the size of the linked list by one
+            //Set the new Node as the head Node and increment the size of the linked list by one
             node.next = head;
             head = node;
             size++;
@@ -71,13 +71,13 @@ public class LinkedList<E> implements Iterable<E> {
 
             //if the index is 0
 
-            //Save the head node in the prevNode variable
+            //Save the head Node in the prevNode variable
             prevNode = head;
 
-            //Set the new node as the head node
+            //Set the new Node as the head Node
             head = node;
 
-            //Update the .next pointer for the new head node
+            //Update the .next pointer for the new head Node
             node.next = prevNode;
 
             //Add one to the size variable
@@ -92,19 +92,19 @@ public class LinkedList<E> implements Iterable<E> {
 
             //Else the item is being added at a non-edge case index
 
-            //Set the temp node to be the head node
+            //Set the temp Node to be the head Node
             temp = head;
 
-            //Iterate through the .next pointers of the temp node until we reach the index the new Node needs to be
-            // added at
+            //Iterate through the .next pointers of the temp Node until we reach the index the new Node needs to be
+            //added at
             for(int x = 0; x < index-1; x++) {
                 temp = temp.next;
             }
 
-            //Set the new node's .next pointer to be the temp node's .next pointer
+            //Set the new Node's .next pointer to be the temp Node's .next pointer
             node.next = temp.next;
 
-            //Set the temp node's .next pointer to be the new node
+            //Set the temp Node's .next pointer to be the new Node
             temp.next = node;
 
             //Add one to the size variable
@@ -114,7 +114,7 @@ public class LinkedList<E> implements Iterable<E> {
 
     /**
      * The remove method deletes the Node at the specified index
-     * @param index The index of the node to be deleted
+     * @param index The index of the Node to be deleted
      */
     public void remove(int index) {
 
@@ -132,60 +132,60 @@ public class LinkedList<E> implements Iterable<E> {
 
             //Else, the index is within the bounds of linked list
 
-            //Set the temp node to be the head node
+            //Set the temp Node to be the head Node
             Node<E> temp = head;
 
-            //Set the previous node to be the temp node
+            //Set the previous Node to be the temp Node
             Node<E> prevNode = temp;
 
-            //Set the next node to be null
+            //Set the next Node to be null
             Node<E> nextNode = null;
 
-            //Check to see if the index is the head node
+            //Check to see if the index is the head Node
             if(index == 0) {
 
-                //Then set the head node to be the head's .next pointer node
+                //Then set the head Node to be the head's .next pointer Node
                 head = temp.next;
             }else if(index == size) {
 
                 //if the index is the same as the size of the linked list
 
-                //Iterate through the linked list until we reach the end, keeping track of the previous node and the
-                //current node
+                //Iterate through the linked list until we reach the end, keeping track of the previous Node and the
+                //current Node
                 for(int x = 0; x < index-1; x++) {
                     prevNode = temp;
                     temp = temp.next;
                 }
 
-                //Once we reach the end, set the previous node's .next pointer to null since we are removing the last
-                //node
+                //Once we reach the end, set the previous Node's .next pointer to null since we are removing the last
+                //Node
                 prevNode.next = null;
             }else {
 
-                //Else, the node is within the bounds of the linked list
+                //Else, the Node is within the bounds of the linked list
 
-                //Iterate through the list until we get to the index, keeping track of the current node, previous node
-                //and next node
+                //Iterate through the list until we get to the index, keeping track of the current Node, previous Node
+                //and next Node
                 for(int x = 0; x < index; x++) {
                     prevNode = temp;
                     temp = temp.next;
                     nextNode = temp.next;
                 }
 
-                //Since we are removing a node, set the previous node's .next pointer to the next node, which removes
+                //Since we are removing a Node, set the previous Node's .next pointer to the next Node, which removes
                 //the pointer from the object at this index
                 prevNode.next = nextNode;
 
             }
 
-            //Decrease the node
+            //Decrease the Node
             size--;
         }
     }
 
     /**
      * The get method returns the item that is in the specified index of the list.
-     * @param index The index of the generic object the user wants returned
+     * @param index The index of the object the user wants returned
      * @return The generic object at the specified index
      */
     public E get(int index) {
@@ -207,7 +207,7 @@ public class LinkedList<E> implements Iterable<E> {
 
             //Else, the index is within the bounds of the linked list
 
-            //Set the temp node as the head node and create a count node
+            //Set the temp Node as the head Node and create a count Node
             Node<E> temp = head;
 
             //Iterate through the linked list until we reach the desired index
@@ -223,7 +223,7 @@ public class LinkedList<E> implements Iterable<E> {
     /**
      * The set method changes the object at the specified index.
      * @param index The index of the Node to be changed
-     * @param item The new item to be set at the specified index
+     * @param item The new data to be set at the specified index
      * @return The data that has been replaced
      */
     public E set(int index, E item) {
@@ -243,7 +243,7 @@ public class LinkedList<E> implements Iterable<E> {
 
             //Else, the set index is within the bounds of the list
 
-            //Set the temp node equal to the head node
+            //Set the temp Node equal to the head Node
             Node<E> temp = head;
 
             //Iterate over the list until we get to the desired index
@@ -263,8 +263,8 @@ public class LinkedList<E> implements Iterable<E> {
     }
 
     /**
-     * The size method returns the current number of nodes in the linked list
-     * @return The current number of nodes in the linked list
+     * The size method returns the current number of Nodes in the linked list
+     * @return The current number of Nodes in the linked list
      */
     public int size() {
         return size;
@@ -282,8 +282,8 @@ public class LinkedList<E> implements Iterable<E> {
         //Returns a new Iterator object
         return new Iterator<E>() {
 
-            //Create a Node that stores the current instance of a node in the where node
-            //Set the where node equal to the head node
+            //Create a Node that stores the current instance of a Node in the where variable
+            //Set the where variable equal to the head Node
             private Node<E> where = head;
 
             /**
@@ -297,19 +297,19 @@ public class LinkedList<E> implements Iterable<E> {
             }
 
             /**
-             * The next method captures that data from a node, returns it and moves down the list to the next node.
-             * @return The object within the current node.
+             * The next method captures that data from a Node, returns it and moves down the list to the next Node.
+             * @return The object within the current Node.
              */
             @Override
             public E next() {
 
-                //Capture the data of the current node
+                //Capture the data of the current Node
                 E item = where.data;
 
-                //Move to the next node using the .next pointer
+                //Move to the next Node using the .next pointer
                 where = where.next;
 
-                //Return the data of the current node
+                //Return the data of the current Node
                 return item;
             }
         };

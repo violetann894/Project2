@@ -1,7 +1,7 @@
 /**
  * The RachelSimpleHashMap class is responsible for creating and managing a hashmap with our own simple hashing
  * algorithm.
- * @param <E> A generic object, can accept any class
+ * @param <E> A generic object of any class
  * @author Rachel Hussmann
  */
 public class RachelSimpleHashMap<E>{
@@ -39,7 +39,7 @@ public class RachelSimpleHashMap<E>{
     /**
      * The add method adds a key and an item to the hashmap
      * @param key The key value that will be hashed and used to find the item
-     * @param item The object or data to be stored
+     * @param item The generic object or data to be stored
      */
     public void add(String key, E item){
 
@@ -77,7 +77,7 @@ public class RachelSimpleHashMap<E>{
     /**
      * The get method returns the data associated with a key.
      * @param key The key value for the desired object
-     * @return The object associated with the given key
+     * @return The generic object associated with the given key
      */
     public E get(String key){
 
@@ -170,8 +170,8 @@ public class RachelSimpleHashMap<E>{
     }
 
     /**
-     * The size method returns the number of arrays in the linked list.
-     * @return The size of the linked list
+     * The size method returns the number of key value pairs added to the hashmap.
+     * @return The total number of key value pairs in the hashmap
      */
     public int size(){
         return size;
@@ -181,7 +181,7 @@ public class RachelSimpleHashMap<E>{
      * The isEmpty method checks to see if the hashmap is empty.
      * @return True - If the hashmap is empty, False - If the hashmap is not empty
      */
-    public Boolean isEmpty(){
+    public boolean isEmpty(){
         return size == 0;
     }
 
@@ -237,7 +237,7 @@ public class RachelSimpleHashMap<E>{
     }
 
     /**
-     * The dumbHash method take a key value and hashes it but returning the number of characters in the string.
+     * The dumbHash method takes a key value and hashes it by returning the number of characters in the string.
      * @param key The key to be hashed
      * @return The hashed key (the number of characters in the key)
      */
@@ -247,7 +247,7 @@ public class RachelSimpleHashMap<E>{
 
     /**
      * The contains method checks to see if a key exists in the hashmap.
-     * @param key The key value to check if it is in the hashmap
+     * @param key The key value to find in the hashmap
      * @return True - If the key was found in the hashmap, False - If the key was not found in the hashmap
      */
     public boolean contains(String key) {
@@ -296,7 +296,7 @@ public class RachelSimpleHashMap<E>{
     }
 
     /**
-     * The resize method dynamically resizes the array when the array needs to expand.
+     * The resize method dynamically resizes the array when it needs to be expanded.
      */
     public void resize() {
 
