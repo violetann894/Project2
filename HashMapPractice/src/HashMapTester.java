@@ -11,7 +11,6 @@ public class HashMapTester {
         RachelSimpleHashMap<Integer> intHashMap = new RachelSimpleHashMap<>();
 
         //Checking if methods work
-        System.out.println("Is the intHashMap empty? " + intHashMap.isEmpty() + "\n");
         System.out.println("Adding new items to the hashmap . . .\n");
         intHashMap.add("Zero", 0);
         intHashMap.add("One", 1);

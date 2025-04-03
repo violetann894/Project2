@@ -194,6 +194,13 @@ public class RachelSimpleHashMap<E>{
         //Create the string that will hold the contents of the hashmap
         String contentsOfHashMap = "";
 
+        //Check if the Hashmap is empty
+        if(isEmpty()){
+
+            //If it is, then the check does not need to happen
+            return "Hashmap is empty, no collisions present";
+        }
+
         //Iterate over the entire hashmap
         for(int i = 0; i < data.length; i++){
 
