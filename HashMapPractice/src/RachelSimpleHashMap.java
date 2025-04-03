@@ -186,8 +186,8 @@ public class RachelSimpleHashMap<E>{
     }
 
     /**
-     * The checkNumberOfCollisions prints out the structure of the Hashmap with the number of collisions next to it.
-     * @return A string of the HashMap structure with the number of collisions in the string
+     * The checkNumberOfCollisions prints out the structure of the hashmap with the number of collisions next to it.
+     * @return A string of the hashMap structure with the number of collisions in the string
      */
     public String checkNumberOfCollisions(){
 
@@ -239,9 +239,9 @@ public class RachelSimpleHashMap<E>{
     }
 
     /**
-     * The contains method checks to see if a key exists in the HashMap.
-     * @param key The key value to check if it is in the HashMap
-     * @return True - If the key was found in the HashMap, False - If the key was not found in the HashMap
+     * The contains method checks to see if a key exists in the hashmap.
+     * @param key The key value to check if it is in the hashmap
+     * @return True - If the key was found in the hashmap, False - If the key was not found in the hashmap
      */
     public boolean contains(String key) {
 
