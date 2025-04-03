@@ -9,7 +9,7 @@ public class Book {
 
     /**
      * Default constructor for the Book class
-     * @param name
+     * @param name The name of the book
      */
     public Book(String name){
         this.name = name;
