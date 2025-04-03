@@ -181,11 +181,7 @@ public class RachelSimpleHashMap<E>{
      * @return True - If the hashmap is empty, False - If the hashmap is not empty
      */
     public Boolean isEmpty(){
-        if(size == 0){
-            return true;
-        }else{
-            return false;
-        }
+        return size == 0;
     }
 
     /**
