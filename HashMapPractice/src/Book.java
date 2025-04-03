@@ -8,7 +8,7 @@ public class Book {
     private String name;
 
     /**
-     * Default constructor for the Book class
+     * Constructor for the Book class
      * @param name The name of the book
      */
     public Book(String name){
