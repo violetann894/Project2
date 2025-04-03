@@ -1,6 +1,7 @@
 /**
  * The RachelSimpleHashMap class is responsible for creating and managing a hashmap with our own simple hashing
  * algorithm.
+ * @param <E> A generic object, can accept any class
  * @author Rachel Hussmann
  */
 public class RachelSimpleHashMap<E>{

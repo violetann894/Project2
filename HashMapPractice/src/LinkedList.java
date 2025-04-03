@@ -3,7 +3,7 @@ import java.util.Iterator;
 /**
  * The LinkedList class is responsible for creating and managing a linked list of items. This class can handle generic
  * types and has a nested class called the Node class, which manages each part of the linked list separately.
- * @param <E> A generic object, can accept any item
+ * @param <E> A generic object, can accept any class
  * @author Rachel Hussmann
  */
 public class LinkedList<E> implements Iterable<E> {
@@ -271,8 +271,9 @@ public class LinkedList<E> implements Iterable<E> {
     }
 
     /**
-     * The iterator method is a method that comes from the Iterable<E> interface, that must be implemented when used.
-     * This implementation of the iterator is to
+     * The iterator method is a method that comes from the Iterable interface, that must be implemented when used.
+     * This implementation of the iterator is to create a way for the class to use foreach loops and other iteration
+     * based methods.
      * @return The iterator object for the LinkedList class
      */
     @Override
@@ -316,7 +317,7 @@ public class LinkedList<E> implements Iterable<E> {
 
     /**
      * The Node class is responsible for creating each collection of data for each part of the linked list.
-     * @param <E> A generic, can accept any item
+     * @param <E> A generic object, can accept any class
      * @author Rachel Hussmann
      */
     private static class Node<E> {
