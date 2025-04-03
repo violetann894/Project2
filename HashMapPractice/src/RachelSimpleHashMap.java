@@ -185,11 +185,47 @@ public class RachelSimpleHashMap<E>{
     }
 
     /**
-     *
+     * The checkNumberOfCollisions prints out the structure of the Hashmap with the number of collisions next to it.
+     * @return A string of the HashMap structure with the number of collisions in the string
      */
-    // Have this method print out the number of collision for each index of the hashmap
-    public void checkNumberOfCollision(){
+    public String checkNumberOfCollisions(){
 
+        //Create the string that will hold the contents of the hashmap
+        String contentsOfHashMap = "";
+
+        //Iterate over the entire hashmap
+        for(int i = 0; i < data.length; i++){
+
+            //Create a variable to count the number of key value pairs in each linked list
+            int numberOfKeyValuePairs = 0;
+
+            //Check if the specific linked list at the index is null
+            if(data[i] != null) {
+
+                //If it isn't, continue with the process
+
+                //Add the to string the index of the linked list
+                contentsOfHashMap = contentsOfHashMap.concat("Linked List at index " + i + ": ");
+
+                //Iterate over the linked list
+                for (KeyValuePair kvp : data[i]) {
+
+                    //Add each key value pair to the string
+                    contentsOfHashMap = contentsOfHashMap.concat("\n[" + kvp.key + ", " + kvp.data + "]");
+
+                    //Increment the number of key value pairs in the linked list
+                    numberOfKeyValuePairs++;
+                }
+
+                //Add to the string the number of collisions that happened at that index
+                contentsOfHashMap = contentsOfHashMap.concat("\nNumber of collisions: " +
+                        (numberOfKeyValuePairs - 1) + "\n\n");
+
+            }
+        }
+
+        //Return the completed string of the hashmap structure and collisions
+        return contentsOfHashMap;
     }
 
     /**
@@ -251,7 +287,6 @@ public class RachelSimpleHashMap<E>{
         }
     }
 
-
     /**
      * The resize method dynamically resizes the array when the array needs to expand.
      */
@@ -272,21 +307,4 @@ public class RachelSimpleHashMap<E>{
         }
     }
 
-    /**
-     *
-     * @return
-     */
-    /*
-    @Override
-    public String toString(){
-
-        String contentsOfHashMap = "";
-
-        for(LinkedList<KeyValuePair> list : data){
-            for(KeyValuePair kvp : list){
-
-            }
-        }
-    }
-     */
 }
