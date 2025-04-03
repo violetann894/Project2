@@ -297,7 +297,7 @@ public class LinkedList<E> implements Iterable<E> {
             }
 
             /**
-             * The next method captures that data from a Node, returns it and moves down the list to the next Node.
+             * The next method captures the data from a Node, returns it and moves down the list to the next Node.
              * @return The object within the current Node.
              */
             @Override
