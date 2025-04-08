@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 
 /**
- * The FunctionCSVTester is the tester class for the Exporter, Function, Importer, Salter, and Smoother classes.
+ * The PSSTester is the tester class for the Exporter, Function, Importer, Salter, and Smoother classes.
  * It contains the main method to run the methods called.
  * @author Rachel Hussmann
  */
-public class FunctionCSVTester {
+public class PSSTester {
 
     public static void main(String[] args) {
 
