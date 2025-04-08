@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Random;
+import org.jfree.chart.*;
 
 /**
  * The Salter class holds the method responsible for salting data that it is given, specifically the y values to a
@@ -30,6 +31,11 @@ public class Salter {
 
         //Return the new yValues
         return yValues;
+    }
+
+
+    public void createChart(){
+
     }
 
 }

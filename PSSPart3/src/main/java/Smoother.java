@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import org.jfree.chart.*;
 
 /**
  * The Smoother class is responsible for taking salted data and making it more understandable.
@@ -92,6 +93,11 @@ public class Smoother {
         }
 
         //Save the data that has been smoothed
+        createChart();
+    }
+
+    public void createChart(){
 
     }
+
 }
