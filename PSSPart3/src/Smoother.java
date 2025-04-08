@@ -75,16 +75,6 @@ public class Smoother {
         yValues.addAll(tempYValues);
     }
 
-    /**
-     * The saveSmoothedFunction method saves the x values and the smoothed y values into a .CSV file
-     */
-    public void saveSmoothedFunction(){
-        //Create the exporter object
-        Exporter exporter = new Exporter();
-
-        //Call the createFile method to save the values in a csv file
-        exporter.createFile(xValues, yValues, "SmoothedLogFunction.csv");
-    }
 
     /**
      * The runSmoother method is responsible for running the smoothData method the number of times the user would like
@@ -102,6 +92,6 @@ public class Smoother {
         }
 
         //Save the data that has been smoothed
-        saveSmoothedFunction();
+
     }
 }
