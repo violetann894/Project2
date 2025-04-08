@@ -27,45 +27,7 @@ public class Function {
         }
 
         //Call the saveFunction and saveSaltedFunction method to save the x and y values in a csv file
-        saveFunction(xValues, yValues);
-        saveSaltedFunction(xValues, yValues, origin, bound);
+
     }
 
-    /**
-     * The saveFunction method creates an Exporter object and saves the x and y values from the function that was
-     * calculated.
-     * @param xValues The ArrayList of x values from the function
-     * @param yValues The ArrayList of y values calculated using the function and the x values
-     */
-    public void saveFunction(ArrayList<Integer> xValues, ArrayList<Double> yValues){
-
-        //Create the exporter object
-        Exporter exporter = new Exporter();
-
-        //Call the createFile method to save the values in a csv file
-        exporter.createFile(xValues, yValues, "LogFunction.csv");
-    }
-
-    /**
-     * The saveSaltedFunction method creates an Exporter object, salts the y values, and saves the x and y values
-     * from the function that was calculated.
-     * @param xValues The ArrayList of x values from the function
-     * @param yValues The ArrayList of y values calculated using the function and the x values
-     * @param origin The origin of the random function (inclusive)
-     * @param bound The upper bound of the random function (exclusive)
-     */
-    public void saveSaltedFunction(ArrayList<Integer> xValues, ArrayList<Double> yValues, int origin, int bound){
-
-        //Create the exporter object
-        Exporter exporter = new Exporter();
-
-        //Create the salter object
-        Salter salter = new Salter();
-
-        //Salt the yValues data
-        ArrayList<Double> saltedYValues = salter.addSalt(yValues, origin, bound);
-
-        //Call the createFile method to save the values in a csv file
-        exporter.createFile(xValues, saltedYValues, "SaltedLogFunction.csv");
-    }
 }
