@@ -1,3 +1,5 @@
+import org.jfree.data.xy.XYDataset;
+
 import java.util.ArrayList;
 
 /**
@@ -77,11 +79,13 @@ public class Smoother {
 
     /**
      * The runSmoother method is responsible for running the smoothData method the number of times the user would like
-     * and saving the results of the smoothing.
+     * and plotting the results of the smoothing.
      * @param windowValue The number of values to left and to the right of each value to average
      * @param numberOfRuns The number of times to run the smoothData method
+     * @param width The width of the frame for the graph
+     * @param height The height of the frame for the graph
      */
-    public void runSmoother(int windowValue, int numberOfRuns){
+    public void runSmoother(int windowValue, int numberOfRuns, int width, int height){
 
         //Runs the smoothData method the user requested number of times
         for(int i = 0; i < numberOfRuns; i++){
@@ -91,6 +95,8 @@ public class Smoother {
         }
 
         //Save the data that has been smoothed
-
+        Plotter plotter = new Plotter();
+        XYDataset data = plotter.createXYDataset(xValues, yValues, "Smoothed Function");
+        plotter.plotXYData(data, "Smoothed Function", width, height);
     }
 }

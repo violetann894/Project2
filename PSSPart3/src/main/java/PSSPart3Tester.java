@@ -12,21 +12,19 @@ public class PSSPart3Tester {
 
         //Create the Function object to create the original graph
         Function function = new Function();
-        function.logFunction(1, 100);
+        function.logFunction(1, 1000);
 
         //Create the Salter object to salt the yValues
         Salter salter = new Salter();
-        ArrayList<Double> saltedYValues = salter.addSalt(function.getYValues(), -100, 100);
+        ArrayList<Double> saltedYValues = salter.addSalt(function.getYValues(), -100, 101);
 
         //Create the Plotter object to plot the salted yValues
         Plotter plotter = new Plotter();
         XYDataset data = plotter.createXYDataset(function.getXValues(), saltedYValues, "Salted Function");
         plotter.plotXYData(data, "Salted Function", 800, 800);
 
-        //Create the Smoother object to smooth the yValues
-
-
-        //Use the previous plotter object to plot the smoothed yValues
-
+        //Create the Smoother object to smooth the yValues and plot them
+        Smoother smoother = new Smoother(saltedYValues);
+        smoother.runSmoother(250, 3, 800, 800);
     }
 }

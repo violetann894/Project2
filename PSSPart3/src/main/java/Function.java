@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * The Function class holds a method that calculates the answer to a mathematical function using x and y values and a
- * method that saves the x and y values.
+ * method that plots the x and y values.
  * @author Rachel Hussmann
  */
 public class Function {
