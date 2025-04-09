@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import org.jfree.chart.*;
 
 /**
  * The Function class holds a method that calculates the answer to a mathematical function using x and y values and a
