@@ -84,7 +84,7 @@ public class Smoother {
             smoothData(windowValue);
         }
 
-        //Save the data that has been smoothed
+        //Plot the data that has been smoothed
         Plotter plotter = new Plotter();
         XYDataset data = plotter.createXYDataset(xValues, yValues, "Smoothed Function");
         plotter.plotXYData(data, "Smoothed Function", width, height);
