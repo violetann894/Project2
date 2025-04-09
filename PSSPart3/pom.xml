@@ -10,15 +10,6 @@
   <name>PSSPart3</name>
   <url>http://maven.apache.org</url>
 
-  <repositories>
-    <repository>
-      <id>Mulesoft</id>
-      <name>Mulesoft</name>
-      <url>https://repository.mulesoft.org/nexus/content/repositories/public/</url>
-    </repository>
-  </repositories>
-
-
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.target>20</maven.compiler.target>

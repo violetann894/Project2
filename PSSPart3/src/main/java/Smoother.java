@@ -1,3 +1,4 @@
+import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 import org.jfree.data.xy.XYDataset;
 
 import java.util.ArrayList;
@@ -26,55 +27,45 @@ public class Smoother {
      */
     public void smoothData(int windowValue){
 
-        //Create the ArrayLists to save the x and y values
-        ArrayList<Integer> tempXValues = new ArrayList<>();
-        ArrayList<Double> tempYValues = new ArrayList<>();
+        //Create the temp ArrayLists that will hold the data
+        ArrayList<Integer> tempXValue = new ArrayList<>();
+        ArrayList<Double> tempYValue = new ArrayList<>();
 
-        //Initialize the xCount value to keep track of the x values
-        int xCount = 1;
+        //Create a new DescriptiveStatistics object to calculate the rolling mean
+        DescriptiveStatistics statistics = new DescriptiveStatistics();
 
-        //Outer for loop iterates through the salted dataset
-        for(int i = 0; i < yValues.size(); i++){
+        //Set the window size
+        statistics.setWindowSize(windowValue);
 
-            //Initialize the sum and average count needed to create the averaged values
-            double sum = 0.0;
-            int averageCount = 0;
+        //Create a count variable to count how many values from yValues have been added to the DescriptiveStatistics
+        //object
+        int count = 0;
 
-            //First for loop adds up the left side values and the current i value
-            for(int j = 1; j <= windowValue; j++){
+        //Iterate through the yValues
+        for (Double yValue : yValues) {
 
-                //Check to see if the value is outside the range of the list
-                if(i-j >= 0){
+            //Add them to the DescriptiveStatistics object
+            statistics.addValue(yValue);
 
-                    //If the value is within the bounds of the list, add it to the sum and increment the average count
-                    sum += yValues.get(i-j);
-                    averageCount++;
-                }
+            //Check to see if the number of values is greater than the window value
+            if (count >= windowValue) {
+
+                //If it is, start calculating the rolling mean and add it to the tempYValues list
+                tempYValue.add(statistics.getMean());
             }
 
-            //Second for loop adds up the right side values
-            for(int j = 1; j <= windowValue; j++){
-
-                //Check to see if the value is outside the range of the list
-                if(i+j < yValues.size()){
-
-                    //
-                    sum += yValues.get(i+j);
-                    averageCount++;
-                }
-            }
-
-            //If the value is within the bounds of the list, add it to the sum and increment the average count
-            tempXValues.add(xCount);
-            xCount++;
-            tempYValues.add(sum/averageCount);
+            //Increment the count variable by one
+            count++;
         }
 
-        //clear out the xValues and yValues arraylists to copy the new values into them
-        xValues.clear();
-        xValues.addAll(tempXValues);
-        yValues.clear();
-        yValues.addAll(tempYValues);
+        //Iterate through the number of tempYValues and add the indexes to the tempXValues list
+        for(int i = 1; i <= tempYValue.size(); i++){
+            tempXValue.add(i);
+        }
+
+        //Save the temp values to the instance variables
+        xValues = tempXValue;
+        yValues = tempYValue;
     }
 
     /**
