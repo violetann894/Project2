@@ -1,5 +1,4 @@
 import org.jfree.data.xy.XYDataset;
-
 import java.util.ArrayList;
 
 /**

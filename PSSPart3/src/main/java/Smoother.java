@@ -1,6 +1,5 @@
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 import org.jfree.data.xy.XYDataset;
-
 import java.util.ArrayList;
 
 /**
