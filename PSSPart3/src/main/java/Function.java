@@ -23,8 +23,10 @@ public class Function {
      * The logFunction method calculates the value of ln(x) and saves the x and y values into ArrayLists.
      * @param startingValue The starting x value (inclusive)
      * @param finishingValue The last x value (inclusive)
+     * @param width The width for the graph
+     * @param height The height for the graph
      */
-    public void logFunction(int startingValue, int finishingValue){
+    public void logFunction(int startingValue, int finishingValue, int width, int height){
 
         //Loop through the x values and save the x and y values
         for(int i = startingValue; i <= finishingValue; i++){
@@ -39,7 +41,7 @@ public class Function {
         XYDataset logData = plotter.createXYDataset(xValues, yValues, "Natural Log Function");
 
         //Plot the XY graph for the data
-        plotter.plotXYData(logData, "Natural Log Function", 800, 800);
+        plotter.plotXYData(logData, "Natural Log Function", width, height);
     }
 
     /**
