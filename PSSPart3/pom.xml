@@ -10,6 +10,15 @@
   <name>PSSPart3</name>
   <url>http://maven.apache.org</url>
 
+  <repositories>
+    <repository>
+      <id>Mulesoft</id>
+      <name>Mulesoft</name>
+      <url>https://repository.mulesoft.org/nexus/content/repositories/public/</url>
+    </repository>
+  </repositories>
+
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.target>20</maven.compiler.target>
@@ -21,12 +30,6 @@
       <groupId>org.jfree</groupId>
       <artifactId>jfreechart</artifactId>
       <version>1.5.3</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-math4-core</artifactId>
-      <version>4.0-beta1</version>
-      <type>pom</type>
     </dependency>
   </dependencies>
 </project>
