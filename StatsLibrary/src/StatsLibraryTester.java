@@ -6,8 +6,10 @@ public class StatsLibraryTester {
     public static void main(String[] args) {
         PoissonDistribution pTester = new PoissonDistribution();
         TchebysheffsTheorem tTester = new TchebysheffsTheorem();
+        UniformDistribution uTester = new UniformDistribution();
 
         pTester.testOutput();
         tTester.testOutput();
+        uTester.testOutput();
     }
 }
