@@ -4,7 +4,7 @@ import java.math.MathContext;
 import java.math.RoundingMode;
 
 /**
- * The PoissonDistribution class contains methods that relating to Poisson Probability Distributions, including the
+ * The PoissonDistribution class contains methods relating to Poisson Probability Distributions, including the
  * probability, lambda and standard deviation.
  * @author Rachel Hussmann
  */
