@@ -15,8 +15,8 @@ public class UniformDistribution {
      * where a <= y <= b.
      * @param a The lower constant of the uniform distribution
      * @param b The higher constant of the uniform distribution
-     * @param c The lower constant of the probability question
-     * @param d The higher constant of the probability question
+     * @param c The lower value of the probability question
+     * @param d The higher value of the probability question
      * @return The probability of an event occurring based on a uniform distribution
      */
     public double uniformDistribution(int a, int b, int c, int d){
@@ -44,8 +44,8 @@ public class UniformDistribution {
      * where a <= y <= b.
      * @param a The lower constant of the uniform distribution
      * @param b The higher constant of the uniform distribution
-     * @param c The lower constant of the probability question
-     * @param d The higher constant of the probability question
+     * @param c The lower value of the probability question
+     * @param d The higher value of the probability question
      * @return The probability of an event occurring based on a uniform distribution
      */
     public BigDecimal uniformDistribution(BigInteger a, BigInteger b, BigInteger c, BigInteger d){
