@@ -82,6 +82,7 @@ public class TchebysheffsTheorem {
         //Using problem 3.170 from the book (Answer should be 3/4 or .75)
         System.out.println("Using Tchebysheff's Theorem (Double): " + tchebysheffsTheorem(.48, .52, .01, .5));
 
+        System.out.println();
     }
 
 }
