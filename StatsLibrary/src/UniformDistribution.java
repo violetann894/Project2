@@ -12,7 +12,7 @@ public class UniformDistribution {
 
     /**
      * The uniformDistribution method calculates the probability of an event occurring between two values, a and b,
-     * where a <= y <= b.
+     * where a is less than or equal to y less than or equal to b.
      * @param a The lower constant of the uniform distribution
      * @param b The higher constant of the uniform distribution
      * @param c The lower value of the probability question
@@ -41,7 +41,7 @@ public class UniformDistribution {
 
     /**
      * The uniformDistribution method calculates the probability of an event occurring between two values, a and b,
-     * where a <= y <= b.
+     * where a is less than or equal to y less than or equal to b.
      * @param a The lower constant of the uniform distribution
      * @param b The higher constant of the uniform distribution
      * @param c The lower value of the probability question
