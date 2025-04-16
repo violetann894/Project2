@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"<Unnamed>","l":"Factorial"},{"p":"<Unnamed>","l":"PoissonDistribution"},{"p":"<Unnamed>","l":"StatsLibraryTester"},{"p":"<Unnamed>","l":"TchebysheffsTheorem"},{"p":"<Unnamed>","l":"UniformDistribution"}];updateSearchResults();
