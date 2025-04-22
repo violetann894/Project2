@@ -38,37 +38,40 @@ public class Smoother {
             double sum = 0.0;
             int averageCount = 0;
 
-            //First for loop adds up the left side values and the current i value
-            for(int j = 1; j <= windowValue; j++){
+            //First for loop adds up the values to the left of the current index and the current index
+            for(int j = i - windowValue; j <= i; j++){
 
                 //Check to see if the value is outside the range of the list
-                if(i-j >= 0){
+                if(j >= 0){
 
                     //If the value is within the bounds of the list, add it to the sum and increment the average count
-                    sum += yValues.get(i-j);
+                    sum += yValues.get(j);
                     averageCount++;
                 }
             }
 
-            //Second for loop adds up the right side values
-            for(int j = 1; j <= windowValue; j++){
+            //Second for loop adds up the right side values (excluding the current index because that was handled in
+            //the first for loop)
+            for(int j = i + 1; j <= i + windowValue; j++){
 
                 //Check to see if the value is outside the range of the list
-                if(i+j < yValues.size()){
+                if(j < yValues.size()){
 
-                    //
-                    sum += yValues.get(i+j);
+                    ////If the value is within the bounds of the list, add it to the sum and increment the average count
+                    sum += yValues.get(j);
                     averageCount++;
                 }
             }
 
-            //If the value is within the bounds of the list, add it to the sum and increment the average count
+            //Add the current count of x to the tempXValues and increment the xCount variables by 1
             tempXValues.add(xCount);
             xCount++;
+
+            //Add the average of the window to the tempYValues arraylist
             tempYValues.add(sum/averageCount);
         }
 
-        //clear out the xValues and yValues arraylists to copy the new values into them
+        //Clear out the xValues and yValues arraylists to copy the new values into them
         xValues.clear();
         xValues.addAll(tempXValues);
         yValues.clear();
