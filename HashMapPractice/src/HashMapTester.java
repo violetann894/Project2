@@ -50,7 +50,7 @@ public class HashMapTester {
         for(EmergencyCallEntry entry : entries){
             entryHashMap.add(entry.getTwp(), entry);
         }
-        entryHashMap.checkNumberOfCollisions();
+        System.out.println(entryHashMap.checkNumberOfCollisions());
     }
 
 }
