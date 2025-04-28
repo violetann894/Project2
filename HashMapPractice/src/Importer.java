@@ -5,7 +5,8 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 /**
- * The Importer class contains methods to import a file and extract the contents of it.
+ * The Importer class contains methods to import a file and extract the contents of it. For this specific instance, it
+ * accepts .csv data of 911 calls and creates the appropriate list of EmergencyCallEntry objects.
  * @author Rachel Hussmann
  */
 public class Importer {
@@ -15,7 +16,7 @@ public class Importer {
      * @param filepath The filepath of the file that needs to be imported
      * @return The y values from the processed file
      */
-    public ArrayList<Double> importFile(String filepath){
+    public ArrayList<EmergencyCallEntry> importFile(String filepath){
 
         ArrayList<String> dataFromFile = new ArrayList<>();
 
@@ -62,23 +63,24 @@ public class Importer {
      * @param data The ArrayList of strings to be processed
      * @return An ArrayList of doubles that holds the y values
      */
-    public ArrayList<Double> trimAndProcess(ArrayList<String> data){
+    public ArrayList<EmergencyCallEntry> trimAndProcess(ArrayList<String> data){
 
-        //Remove the first string because that is just the declaration of the X,Y values
+        //Remove the first string because that is just the titles of the columns
         data.remove(0);
 
-        //Create the arraylist that will hold the processed y values
-        ArrayList<Double> yValues = new ArrayList<>();
+        //Create the arraylist that will hold the new EmergencyCallEntry objects
+        ArrayList<EmergencyCallEntry> entryObjects = new ArrayList<>();
 
-        /*Iterate through the list of strings to split the values at the comma, the first value being the x value
-        and the second value being the y value. Add the y value to the yValues list*/
+        /*Iterate through the list of strings to split the values at the comma, the first value being the title of the
+        emergency, the second being the timeStamp of the emergency, the third being the township that the emergency
+        occurred, and the fourth being the address of emergency*/
         for(String line : data){
-            String[] xyValues = line.split(",");
-            yValues.add(Double.valueOf(xyValues[1]));
+            String[] entryData = line.split(",");
+            entryObjects.add(new EmergencyCallEntry(entryData[0], entryData[1], entryData[2], entryData[3]));
         }
 
-        //Return the ArrayList of yValues
-        return yValues;
+        //Return the ArrayList of EmergencyCallEntry objects
+        return entryObjects;
     }
 
 }
