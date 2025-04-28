@@ -28,7 +28,7 @@ public class MemorySpeedTester {
         double memoryUsed = (runtime.totalMemory() - runtime.freeMemory())/1048576.00;
         String stringMemoryUsed = "\nAmount of memory used: " + memoryUsed + " MB";
 
-        String timeElapsed = "\nAmount of time used: " + stopwatch.getElapsedTime() + " seconds";
+        String timeElapsed = "\nAmount of time elapsed: " + stopwatch.getElapsedTime() + " seconds";
 
         exporter.createFile("NumberOfCollisions.txt", data + stringMemoryUsed + timeElapsed);
     }
