@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * The HashMapTester class is responsible for testing the methods within the RachelSimpleHashMap to see if they are
  * functioning as expected.
@@ -38,6 +40,17 @@ public class HashMapTester {
         bookHashMap.add("Shakespeare", new Book("Romeo and Juliet"));
         bookHashMap.add("Austin", new Book("Pride and Prejudice"));
         System.out.println(bookHashMap.checkNumberOfCollisions());
+
+        //Using HashMap with .csv data
+        System.out.println("Creating new hashmap . . . \n");
+        RachelSimpleHashMap<EmergencyCallEntry> entryHashMap = new RachelSimpleHashMap<>();
+        Importer importer = new Importer();
+        ArrayList<EmergencyCallEntry> entries =
+                importer.importFile("\\C:\\Users\\Rache\\IdeaProjects\\Project2\\HashMapPractice\\911Data.csv");
+        for(EmergencyCallEntry entry : entries){
+            entryHashMap.add(entry.getTwp(), entry);
+        }
+        entryHashMap.checkNumberOfCollisions();
     }
 
 }
