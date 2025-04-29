@@ -3,7 +3,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 /**
- * The Exporter class holds a method that handles placing x and y data into a csv file.
+ * The Exporter class holds a method that handles placing data in to a .txt file.
  * @author Rachel Hussmann
  */
 public class Exporter {
