@@ -9,7 +9,7 @@ import java.util.Scanner;
  * accepts .csv data of 911 calls and creates the appropriate list of EmergencyCallEntry objects. The .csv file comes
  * from the Kaggle dataset "Emergency - 911 calls" and has been trimmed to only have columns with the data of
  * ["title", "timeStamp", "twp", "address"].
- * Link to dataset: <a href="https://www.kaggle.com/datasets/mchirico/montcoalert?resource=download">...</a>
+ * Link to dataset: https://www.kaggle.com/datasets/mchirico/montcoalert?resource=download
  * @author Rachel Hussmann
  */
 public class Importer {

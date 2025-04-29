@@ -2,7 +2,7 @@
  * The EmergencyCallEntry class is responsible for taking in data from the Kaggle dataset "Emergency - 911 Calls".
  * This class works alongside the Importer class to accept data from a .csv file and organizes the data in to multiple
  * EmergencyCallEntry objects.
- * Link to dataset here: <a href="https://www.kaggle.com/datasets/mchirico/montcoalert?resource=download">...</a>
+ * Link to dataset here: https://www.kaggle.com/datasets/mchirico/montcoalert?resource=download
  * @author Rachel Hussmann
  */
 public class EmergencyCallEntry {
