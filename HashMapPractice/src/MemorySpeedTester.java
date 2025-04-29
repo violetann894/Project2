@@ -22,7 +22,7 @@ public class MemorySpeedTester {
         //Create the importer object and import the 911 call entry data into EmergencyCallEntry objects
         Importer importer = new Importer();
         ArrayList<EmergencyCallEntry> entries =
-                importer.importFile("\\C:\\Users\\Rache\\IdeaProjects\\Project2\\HashMapPractice\\911FullData.csv");
+                importer.importFile("\\C:\\Users\\Rache\\IdeaProjects\\ProjectTwo\\HashMapPractice\\911OneSixthData.csv");
 
         //Iterate through all the EmergencyCallEntry and add them to the new hashmap
         for(EmergencyCallEntry entry : entries){
@@ -45,6 +45,6 @@ public class MemorySpeedTester {
         String timeElapsed = "\nAmount of time elapsed: " + stopwatch.getElapsedTime() + " milliseconds";
 
         //Create the file with all the collision data, amount of memory used and the time the program took
-        exporter.createFile("NumberOfCollisionsFullData.txt", data + stringMemoryUsed + timeElapsed);
+        exporter.createFile("NumberOfCollisionsOneSixthData.txt", data + stringMemoryUsed + timeElapsed);
     }
 }

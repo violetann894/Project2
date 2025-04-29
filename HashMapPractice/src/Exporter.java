@@ -3,15 +3,16 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 /**
- * The Exporter class holds a method that handles placing data in to a .txt file.
+ * The Exporter class holds a method that handles saving data into a .txt file.
  * @author Rachel Hussmann
  */
 public class Exporter {
 
     /**
-     * The createFile method creates a csv file that holds the X and Y values of a mathematical function.
+     * The createFile method creates a .txt file that holds the number of collisions for a RachelSimpleHashMap filled
+     * with EmergencyCallEntry objects.
      * @param nameOfFile The name of the file to be created
-     * @param data The String data to be included in the file
+     * @param data The data to be saved in the file
      */
     public void createFile(String nameOfFile, String data){
 

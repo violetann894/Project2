@@ -15,9 +15,9 @@ import java.util.Scanner;
 public class Importer {
 
     /**
-     * The importFile method imports a file and puts all the lines from the file into an ArrayList of strings
+     * The importFile method imports a file and puts all the lines from the file into an ArrayList of strings.
      * @param filepath The filepath of the file that needs to be imported
-     * @return The y values from the processed file
+     * @return The ArrayList of the processed EmergencyCallEntry objects
      */
     public ArrayList<EmergencyCallEntry> importFile(String filepath){
 
@@ -61,10 +61,10 @@ public class Importer {
     }
 
     /**
-     * The trimAndProcess method trims the extra information off of the imported file and separates the values into
-     * x and y values.
+     * The trimAndProcess method trims the extra information off of the imported file and places the data into
+     * EmergencyCallEntry objects.
      * @param data The ArrayList of strings to be processed
-     * @return An ArrayList of doubles that holds the y values
+     * @return An ArrayList of EmergencyCallEntry objects
      */
     public ArrayList<EmergencyCallEntry> trimAndProcess(ArrayList<String> data){
 
