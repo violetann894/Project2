@@ -4,12 +4,14 @@
     <excludeFromCompile>
       <directory url="file://$PROJECT_DIR$/PSSPart3/PSSMaven/src/main/resources/archetype-resources" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/PSSPart3Maven/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/RachelsHashMap/src/main/resources/archetype-resources" includeSubdirectories="true" />
     </excludeFromCompile>
     <annotationProcessing>
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="RachelsHashMap" />
         <module name="PSSPart3" />
       </profile>
     </annotationProcessing>
