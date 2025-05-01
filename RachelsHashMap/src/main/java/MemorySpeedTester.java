@@ -22,7 +22,7 @@ public class MemorySpeedTester {
         //Create the importer object and import the 911 call entry data into EmergencyCallEntry objects
         Importer importer = new Importer();
         ArrayList<EmergencyCallEntry> entries =
-                importer.importFile("\\C:\\Users\\Rache\\IdeaProjects\\ProjectTwo\\HashMapPractice\\911OneSixthData.csv");
+                importer.importFile("\\C:\\Users\\Rache\\IdeaProjects\\Project2\\RachelsHashMap\\911OneSixthData.csv");
 
         //Iterate through all the EmergencyCallEntry and add them to the new hashmap
         for(EmergencyCallEntry entry : entries){
